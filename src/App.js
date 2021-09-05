@@ -3,28 +3,34 @@ import React, { useState } from 'react';
 //Components
 import Clock from './Clock'
 
-//Hooks
-import { useClockFetch } from './hooks/useClockFetch';
-
 function App() {
-  //const[state, useState] = useState(currentTime);
+    const[state, setState] = useState();
 
-  setInterval(() => {
     const date = new Date();
-    const hour = date.getHours();
-    const minute = date.getMinutes();
-    const second = date.getSeconds();
-  
-    const currentTime = `${hour}:${minute}:${second}`
-      
-  }, 1000)
+    let h = date.getHours();
+    let m = date.getMinutes();
+    let s = addZero(date.getSeconds());
 
-  
-  return (
-    <>
-      <Clock time={setInterval}/>
-    </>
-  );
+    let time = `${h}:${m}:${s}`    
+
+    function addZero (i) {
+        if (i < 10) {
+            i = "0" + 1
+        }
+        return i
+    }
+
+    setInterval(() => {
+        setState(prevState => prevState + time)
+    }, 1000)
+    
+
+    return (
+        <>
+            <Clock time={time} />
+            
+        </>
+    )
 }
 
 export default App;
