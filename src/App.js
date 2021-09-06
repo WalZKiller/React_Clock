@@ -8,14 +8,21 @@ import AnalogClock from './AnalogClock';
 
 const App = () => {
     const[state, setState] = useState();
-    const[ampm, setAmpm] = useState('')
 
     const date = new Date();
     let h = addZero(date.getHours());
     let m = addZero(date.getMinutes());
     let s = addZero(date.getSeconds());
 
-    let time = `${h}:${m}:${s}`    
+    const secondsRatio = date.getSeconds() / 60;
+    const minuteRatio = (secondsRatio + date.getMinutes()) / 60;
+    const hourRatio = (minuteRatio + date.getHours()) / 12;
+
+    let time = `${h}:${m}:${s}` 
+
+    setInterval(() => {
+        setState(prevState => prevState + time)
+    }, 1000)
 
     function addZero (i) {
         if (i < 10) {
@@ -24,13 +31,18 @@ const App = () => {
         return i
     }
 
-    setInterval(() => {
-        setState(prevState => prevState + time)
-    }, 1000)
     
-    function rotateAnalog(number, rotation) {
-        
+
+    /*
+    function setClock () {
+        setRotation(handSecond, secondsRatio);
+        setRotation(handMinute, minuteRatio);
+        setRotation(handHour, hourRatio);
     }
+    
+    function setRotation (element, rotationRatio) {
+        element.style.setProperty('--rotation', rotationRatio * 360)
+    }*/
 
     return (
         <>
