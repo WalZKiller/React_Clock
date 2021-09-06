@@ -33,7 +33,7 @@ export const CenterHands = styled.div`
     position: relative;
 `;
 
-export const Numbers = styled.div`
+export const Number1 = styled.div`
     display: flex;
     justify-content: center;
     font-family: 'Abel', sans-serif;
@@ -42,6 +42,139 @@ export const Numbers = styled.div`
     height: 70vmin;
     width: 70vmin;
     position: fixed;
+    transform: rotate(30deg);
+`;
+
+export const Number2 = styled.div`
+    display: flex;
+    justify-content: center;
+    font-family: 'Abel', sans-serif;
+    font-size: 4vmin;
+    color: black;
+    height: 70vmin;
+    width: 70vmin;
+    position: fixed;
+    transform: rotate(60deg);
+`;
+
+export const Number3 = styled.div`
+    display: flex;
+    justify-content: center;
+    font-family: 'Abel', sans-serif;
+    font-size: 4vmin;
+    color: black;
+    height: 70vmin;
+    width: 70vmin;
+    position: fixed;
+    transform: rotate(90deg);
+`;
+
+export const Number4 = styled.div`
+    display: flex;
+    justify-content: center;
+    font-family: 'Abel', sans-serif;
+    font-size: 4vmin;
+    color: black;
+    height: 70vmin;
+    width: 70vmin;
+    position: fixed;
+    transform: rotate(120deg);
+`;
+
+export const Number5 = styled.div`
+    display: flex;
+    justify-content: center;
+    font-family: 'Abel', sans-serif;
+    font-size: 4vmin;
+    color: black;
+    height: 70vmin;
+    width: 70vmin;
+    position: fixed;
+    transform: rotate(150deg);
+`;
+
+export const Number6 = styled.div`
+    display: flex;
+    justify-content: center;
+    font-family: 'Abel', sans-serif;
+    font-size: 4vmin;
+    color: black;
+    height: 70vmin;
+    width: 70vmin;
+    position: fixed;
+    transform: rotate(180deg);
+`;
+
+export const Number7 = styled.div`
+    display: flex;
+    justify-content: center;
+    font-family: 'Abel', sans-serif;
+    font-size: 4vmin;
+    color: black;
+    height: 70vmin;
+    width: 70vmin;
+    position: fixed;
+    transform: rotate(210deg);
+`;
+
+export const Number8 = styled.div`
+    display: flex;
+    justify-content: center;
+    font-family: 'Abel', sans-serif;
+    font-size: 4vmin;
+    color: black;
+    height: 70vmin;
+    width: 70vmin;
+    position: fixed;
+    transform: rotate(240deg);
+`;
+
+export const Number9 = styled.div`
+    display: flex;
+    justify-content: center;
+    font-family: 'Abel', sans-serif;
+    font-size: 4vmin;
+    color: black;
+    height: 70vmin;
+    width: 70vmin;
+    position: fixed;
+    transform: rotate(270deg);
+`;
+
+export const Number10 = styled.div`
+    display: flex;
+    justify-content: center;
+    font-family: 'Abel', sans-serif;
+    font-size: 4vmin;
+    color: black;
+    height: 70vmin;
+    width: 70vmin;
+    position: fixed;
+    transform: rotate(300deg);
+`;
+
+export const Number11 = styled.div`
+    display: flex;
+    justify-content: center;
+    font-family: 'Abel', sans-serif;
+    font-size: 4vmin;
+    color: black;
+    height: 70vmin;
+    width: 70vmin;
+    position: fixed;
+    transform: rotate(330deg);
+`;
+
+export const Number12 = styled.div`
+    display: flex;
+    justify-content: center;
+    font-family: 'Abel', sans-serif;
+    font-size: 4vmin;
+    color: black;
+    height: 70vmin;
+    width: 70vmin;
+    position: fixed;
+    transform: rotate(0deg);
 `;
 
 export const Circle = styled.div`

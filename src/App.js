@@ -8,6 +8,7 @@ import AnalogClock from './AnalogClock';
 
 const App = () => {
     const[state, setState] = useState();
+    const[number, setNumber] = useState(0);
 
     const date = new Date();
     let h = addZero(date.getHours());

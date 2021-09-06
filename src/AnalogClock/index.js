@@ -1,15 +1,30 @@
 import React from 'react';
 
 //Styles
-import { Wrapper, Content, CenterHands, Numbers, Circle, HourHand, MinuteHand, SecondHand } from './AnalogClock.styles';
+import {
+    Wrapper,
+    Content, 
+    CenterHands, 
+    Number1, Number2, Number3, Number4, Number5, Number6, Number7, Number8, Number9, Number10, Number11, Number12,
+    Circle, HourHand, MinuteHand, SecondHand } from './AnalogClock.styles';
 
-const AnalogClock = ({ rotation }) => (
+const AnalogClock = () => (
+
     <Wrapper>
         <Content>
             <CenterHands>
-                <Numbers rotation={rotation}>12</Numbers>
-                <Numbers rotation={rotation}>1</Numbers>
-                <Numbers rotation={rotation}>2</Numbers>
+                <Number1>1</Number1>
+                <Number2>2</Number2>
+                <Number3>3</Number3>
+                <Number4>4</Number4>
+                <Number5>5</Number5>
+                <Number6>6</Number6>
+                <Number7>7</Number7>
+                <Number8>8</Number8>
+                <Number9>9</Number9>
+                <Number10>10</Number10>
+                <Number11>11</Number11>
+                <Number12>12</Number12>
                 <HourHand />
                 <MinuteHand />
                 <SecondHand />
