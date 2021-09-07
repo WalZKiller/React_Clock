@@ -8,8 +8,26 @@ import {
     Number1, Number2, Number3, Number4, Number5, Number6, Number7, Number8, Number9, Number10, Number11, Number12,
     Circle, HourHand, MinuteHand, SecondHand } from './AnalogClock.styles';
 
-const AnalogClock = () => (
+const AnalogClock = () => {
 
+    function setClock () {
+        const date = new Date();
+        const secondsRatio = date.getSeconds() / 60;
+        const minuteRatio = (secondsRatio + date.getMinutes()) / 60;
+        const hourRatio = (minuteRatio + date.getHours()) / 12;
+
+        setRotation(HourHand, secondsRatio);
+        /*setRotation(MinuteHand, minuteRatio);
+        setRotation(SecondHand, hourRatio);*/
+    }
+    
+    function setRotation (element, rotationRatio) {
+        element.style.setProperty('--rotation', rotationRatio * 360);
+    }
+
+    setClock();
+
+    return (
     <Wrapper>
         <Content>
             <CenterHands>
@@ -32,6 +50,6 @@ const AnalogClock = () => (
             </CenterHands>
         </Content>
     </Wrapper>
-)
+)}
 
 export default AnalogClock;

@@ -185,32 +185,36 @@ export const Circle = styled.div`
     border-radius: 50%;
 `;
 
-export const HourHand = styled.div`
+export let HourHand = styled.object`
+    --rotation: 0;
     width: 1.5vmin;
     height: 15vmin;
     border-radius: 1vmin 1vmin 0 0;
     background: black;
     transform-origin: bottom;
-    transform: translateY(-50%) rotate(90deg);
+    transform: translateY(-50%) rotate(calc(var(--rotation) * 1deg));
     position: fixed;
+    
 `;
 
 export const MinuteHand = styled.div`
+    --rotation: 0;
     width: 1vmin;
     height: 28vmin;
     border-radius: 1vmin 1vmin 0 0;
     background: black;
     transform-origin: bottom;
-    transform: translateY(-50%) rotate(30deg);
+    transform: translateY(-50%) rotate(calc(var(--rotation) * 1deg));
     position: fixed;
 `;
 
 export const SecondHand = styled.div`
+    --rotation: 0;
     width: 0.5vmin;
     height: 30vmin;
     border-radius: 1vmin 1vmin 0 0;
     background: red;
     transform-origin: bottom;
-    transform: translateY(-50%);
+    transform: translateY(-50%) rotate(calc(var(--rotation) * 1deg));
     position: fixed;
 `;

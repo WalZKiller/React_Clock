@@ -14,11 +14,6 @@ const App = () => {
     let h = addZero(date.getHours());
     let m = addZero(date.getMinutes());
     let s = addZero(date.getSeconds());
-
-    const secondsRatio = date.getSeconds() / 60;
-    const minuteRatio = (secondsRatio + date.getMinutes()) / 60;
-    const hourRatio = (minuteRatio + date.getHours()) / 12;
-
     let time = `${h}:${m}:${s}` 
 
     setInterval(() => {
@@ -31,19 +26,6 @@ const App = () => {
         }
         return i
     }
-
-    
-
-    /*
-    function setClock () {
-        setRotation(handSecond, secondsRatio);
-        setRotation(handMinute, minuteRatio);
-        setRotation(handHour, hourRatio);
-    }
-    
-    function setRotation (element, rotationRatio) {
-        element.style.setProperty('--rotation', rotationRatio * 360)
-    }*/
 
     return (
         <>
