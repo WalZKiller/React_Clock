@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
     width: 100vw;
     height: 100vh;
     margin: 0;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -185,36 +184,52 @@ export const Circle = styled.div`
     border-radius: 50%;
 `;
 
-export let HourHand = styled.object`
-    --rotation: 0;
-    width: 1.5vmin;
+export const HourHand = styled.div`
+    width: 2vmin;
     height: 15vmin;
     border-radius: 1vmin 1vmin 0 0;
     background: black;
     transform-origin: bottom;
-    transform: translateY(-50%) rotate(calc(var(--rotation) * 1deg));
     position: fixed;
-    
+    top: 35vmin;
 `;
 
 export const MinuteHand = styled.div`
-    --rotation: 0;
-    width: 1vmin;
+    width: 1.5vmin;
     height: 28vmin;
     border-radius: 1vmin 1vmin 0 0;
     background: black;
     transform-origin: bottom;
-    transform: translateY(-50%) rotate(calc(var(--rotation) * 1deg));
     position: fixed;
+    top: 22vmin;
 `;
 
 export const SecondHand = styled.div`
-    --rotation: 0;
     width: 0.5vmin;
     height: 30vmin;
     border-radius: 1vmin 1vmin 0 0;
     background: red;
     transform-origin: bottom;
-    transform: translateY(-50%) rotate(calc(var(--rotation) * 1deg));
     position: fixed;
+    top: 20vmin;
+`;
+
+export const Back = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6vw;
+    height: 3vw;
+    border-radius: 2rem;
+    border: none;
+    transform: translateY(-20vw) translateX(-20vw);
+    font-family: 'Abel', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+
+    :hover {
+        background: rgba(255, 255, 255, 0.5);
+        color: black;
+    }
 `;

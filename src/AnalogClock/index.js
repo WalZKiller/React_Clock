@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 //Styles
 import {
@@ -6,29 +7,37 @@ import {
     Content, 
     CenterHands, 
     Number1, Number2, Number3, Number4, Number5, Number6, Number7, Number8, Number9, Number10, Number11, Number12,
-    Circle, HourHand, MinuteHand, SecondHand } from './AnalogClock.styles';
+    Circle, HourHand, MinuteHand, SecondHand, Back } from './AnalogClock.styles';
 
 const AnalogClock = () => {
 
-    function setClock () {
-        const date = new Date();
-        const secondsRatio = date.getSeconds() / 60;
-        const minuteRatio = (secondsRatio + date.getMinutes()) / 60;
-        const hourRatio = (minuteRatio + date.getHours()) / 12;
+    const date = new Date();
+    const hour = date.getHours();
+    const minute = date.getMinutes();
+    const second = date.getSeconds();
 
-        setRotation(HourHand, secondsRatio);
-        /*setRotation(MinuteHand, minuteRatio);
-        setRotation(SecondHand, hourRatio);*/
-    }
-    
-    function setRotation (element, rotationRatio) {
-        element.style.setProperty('--rotation', rotationRatio * 360);
-    }
+    const secondsRatio = date.getSeconds() / 60;
+    const minuteRatio = (secondsRatio + date.getMinutes()) / 60;
+    const hourRatio = (minuteRatio + date.getHours()) / 12;
 
-    setClock();
+    const hoursStyle = {
+        transform: `rotate(${(hour + minuteRatio) * 30}deg)`
+      };
+
+    const minuteStyle = {
+        transform: `rotate(${minute * 6}deg)`
+      };
+
+    const secondStyle = {
+        transform: `rotate(${second * 6}deg)`
+      };
 
     return (
+        
     <Wrapper>
+        <Link to='/' style={{ textDecoration: 'none'}}>
+            <Back>Back</Back>
+        </Link>
         <Content>
             <CenterHands>
                 <Number1>1</Number1>
@@ -43,9 +52,9 @@ const AnalogClock = () => {
                 <Number10>10</Number10>
                 <Number11>11</Number11>
                 <Number12>12</Number12>
-                <HourHand />
-                <MinuteHand />
-                <SecondHand />
+                <HourHand style={hoursStyle}/>
+                <MinuteHand style={minuteStyle}/>
+                <SecondHand style={secondStyle}/>
                 <Circle />
             </CenterHands>
         </Content>

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //Components
+import Home from './Home';
 import Clock from './Clock';
 import AnalogClock from './AnalogClock';
 
@@ -31,7 +32,8 @@ const App = () => {
         <>
         <Router>
             <Routes>
-                <Route path='/' element={<Clock time={time} />}/>
+                <Route path='/' element={<Home />}/>
+                <Route path='/digital-clock' element={<Clock time={time} />}/>
                 <Route path='/analog-clock' element={<AnalogClock />}/>
             </Routes>
         </Router>
